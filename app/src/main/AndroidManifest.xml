@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.myapplication" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".matrix.MatrixActivity"  />
+
+        <activity android:name=".bitmapcut.CutBitmapActivity"  />
+        <activity android:name=".PermissionTestActivity"  />
+        <activity android:name="com.example.administrator.myapplication.leak.LeakActivity"  />
+        <activity android:name="com.example.administrator.myapplication.leak.LeakActivity2"  />
+        <activity android:name="com.example.administrator.myapplication.leak.LeakActivity3"  />
+        <activity android:name="com.example.administrator.myapplication.recyleview.TestRecycleViewActivity"  />
+        <activity android:name="com.example.administrator.myapplication.badtoken.BadTokenActivity"  />
+        <activity android:name="com.example.administrator.myapplication.observer_leak.TestObserverLeakActivity"  />
+        <activity android:name="com.example.administrator.myapplication.fix_rx_subscriber.FixRxActivity"  />
+    </application>
+
+</manifest>
