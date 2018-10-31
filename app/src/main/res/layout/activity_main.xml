@@ -78,6 +78,12 @@
         android:layout_height="wrap_content"
         android:text="test rx error subscriber"/>
 
+    <Button
+        android:id="@+id/btn_test_rx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test rx"/>
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

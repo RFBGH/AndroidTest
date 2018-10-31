@@ -14,8 +14,10 @@ import com.example.administrator.myapplication.leak.LeakActivity;
 import com.example.administrator.myapplication.leak.LeakActivity2;
 import com.example.administrator.myapplication.leak.LeakActivity3;
 import com.example.administrator.myapplication.recyleview.TestRecycleViewActivity;
+import com.example.administrator.myapplication.rxtest.RxTestActivity;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.plugins.RxJavaHooks;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
                         findViewById(R.id.pb_load_progress).setVisibility(View.GONE);
 //                        Intent intent = new Intent(MainActivity.this, CutBitmapActivity.class);
 //                        MainActivity.this.startActivity(intent);
+                    }
+                });
+
+        findViewById(R.id.btn_test_rx)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RxTestActivity.start(MainActivity.this);
                     }
                 });
 

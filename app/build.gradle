@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'com.llew.bytecode.fix'
+//apply plugin: 'com.llew.bytecode.fix'
 
-apply plugin: demo.PathPlugin
+//apply plugin: PathPlugin
+
 
 android {
     compileSdkVersion 23
@@ -33,16 +34,17 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
 
     compile('com.afollestad.material-dialogs:commons:0.9.0.2')
+
 }
 
-bytecodeFixConfig {
-    enable = true
-    logEnable = true
-    keepFixedJarFile = true
-    keepFixedClassFile = true
-    dependencies = [
-    ]
-    fixConfig = [
-            'rx.internal.util.InternalObservableUtils.ErrorNotImplementedAction##call(java.lang.Throwable)#$1.printStackTrace();##-1'
-    ]
-}
+//bytecodeFixConfig {
+//    enable = true
+//    logEnable = true
+//    keepFixedJarFile = true
+//    keepFixedClassFile = true
+//    dependencies = [
+//    ]
+//    fixConfig = [
+//            'rx.internal.util.InternalObservableUtils$ErrorNotImplementedAction##call(java.lang.Throwable)##$1.printStackTrace();##-1'
+//    ]
+//}
