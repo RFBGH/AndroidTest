@@ -23,7 +23,7 @@ import rx.subjects.PublishSubject;
  * Created by Administrator on 2018/10/31 0031.
  */
 
-public class RxTestActivity extends Activity{
+public class RxTestActivity2 extends Activity{
 
     private TextView mTvTip;
     private Button mBtnTest;
@@ -48,45 +48,19 @@ public class RxTestActivity extends Activity{
             }
         });
 
-        mSubscription = mPublishSubject
-                .flatMap(new Func1<String, Observable<String>>() {
-                    @Override
-                    public Observable<String> call(final String s) {
-                        return Observable
-                                .create(new Observable.OnSubscribe<String>() {
-                                    @Override
-                                    public void call(Subscriber<? super String> subscriber) {
-                                        subscriber.onNext(s+" "+s+" "+Thread.currentThread().getName());
-                                        subscriber.onCompleted();
-                                    }
-                                })
-                                .subscribeOn(Schedulers.newThread());
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<String>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        e.printStackTrace();
-                    }
-
-                    @Override
-                    public void onNext(String s) {
-                        mTvTip.setText(s);
-                    }
-                });
-
 //        mSubscription = mPublishSubject
-//                .observeOn(Schedulers.newThread())
-//                .map(new Func1<String, String>() {
+//                .flatMap(new Func1<String, Observable<String>>() {
 //                    @Override
-//                    public String call(String s) {
-//                        return s+" "+s;
+//                    public Observable<String> call(final String s) {
+//                        return Observable
+//                                .create(new Observable.OnSubscribe<String>() {
+//                                    @Override
+//                                    public void call(Subscriber<? super String> subscriber) {
+//                                        subscriber.onNext(s+" "+s+" "+Thread.currentThread().getName());
+//                                        subscriber.onCompleted();
+//                                    }
+//                                })
+//                                .subscribeOn(Schedulers.newThread());
 //                    }
 //                })
 //                .observeOn(AndroidSchedulers.mainThread())
@@ -107,6 +81,32 @@ public class RxTestActivity extends Activity{
 //                    }
 //                });
 
+        mSubscription = mPublishSubject
+                .observeOn(Schedulers.newThread())
+                .map(new Func1<String, String>() {
+                    @Override
+                    public String call(String s) {
+                        return s+" "+s;
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        mTvTip.setText(s);
+                    }
+                });
+
     }
 
     @Override
@@ -119,7 +119,7 @@ public class RxTestActivity extends Activity{
     }
 
     public static void start(Context context){
-        Intent intent = new Intent(context, RxTestActivity.class);
+        Intent intent = new Intent(context, RxTestActivity2.class);
         context.startActivity(intent);
     }
 }
