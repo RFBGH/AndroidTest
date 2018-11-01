@@ -56,7 +56,7 @@ public class RxTestActivity extends Activity{
                                 .create(new Observable.OnSubscribe<String>() {
                                     @Override
                                     public void call(Subscriber<? super String> subscriber) {
-                                        subscriber.onNext(s+" "+s+" "+Thread.currentThread().getName());
+                                        subscriber.onNext(s+" "+Thread.currentThread().getName());
                                         subscriber.onCompleted();
                                     }
                                 })

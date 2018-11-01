@@ -82,13 +82,14 @@ public class RxTestActivity2 extends Activity{
 //                });
 
         mSubscription = mPublishSubject
+                .observeOn(Schedulers.newThread())
                 .map(new Func1<String, String>() {
                     @Override
                     public String call(String s) {
-                        return s+" "+s;
+                        return Thread.currentThread().getName()+" "+s;
                     }
                 })
-                .subscribeOn(Schedulers.newThread())
+//                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<String>() {
                     @Override
