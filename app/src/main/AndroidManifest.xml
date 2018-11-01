@@ -20,6 +20,7 @@
 
         <activity android:name=".rxtest.RxTestActivity"  />
         <activity android:name=".rxtest.RxTestActivity2"  />
+        <activity android:name=".rxtest.RxTestActivity3"  />
         <activity android:name=".bitmapcut.CutBitmapActivity"  />
         <activity android:name=".PermissionTestActivity"  />
         <activity android:name="com.example.administrator.myapplication.leak.LeakActivity"  />

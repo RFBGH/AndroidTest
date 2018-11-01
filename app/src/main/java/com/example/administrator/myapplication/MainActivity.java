@@ -16,6 +16,7 @@ import com.example.administrator.myapplication.leak.LeakActivity3;
 import com.example.administrator.myapplication.recyleview.TestRecycleViewActivity;
 import com.example.administrator.myapplication.rxtest.RxTestActivity;
 import com.example.administrator.myapplication.rxtest.RxTestActivity2;
+import com.example.administrator.myapplication.rxtest.RxTestActivity3;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -73,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
                         RxTestActivity2.start(MainActivity.this);
                     }
                 });
+
+        findViewById(R.id.btn_test_rx3)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RxTestActivity3.start(MainActivity.this);
+                    }
+                });
+
 
 
 //        mLvTest = (ListView)findViewById(R.id.lv_test);
