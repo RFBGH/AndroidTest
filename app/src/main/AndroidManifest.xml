@@ -24,6 +24,8 @@
         <activity android:name=".bitmapcut.CutBitmapActivity"  />
         <activity android:name=".PermissionTestActivity"  />
         <activity android:name="com.example.administrator.myapplication.leak.LeakActivity"  />
+        <activity android:name="com.example.administrator.myapplication.bitmap.CheckGifMemoryActivity"  />
+        <activity android:name="com.example.administrator.myapplication.bitmap.CheckBmpMemoryActivity"  />
         <activity android:name="com.example.administrator.myapplication.leak.LeakActivity2"  />
         <activity android:name="com.example.administrator.myapplication.leak.LeakActivity3"  />
         <activity android:name="com.example.administrator.myapplication.recyleview.TestRecycleViewActivity"  />

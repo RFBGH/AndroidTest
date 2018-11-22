@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.administrator.myapplication.badtoken.BadTokenActivity;
+import com.example.administrator.myapplication.bitmap.CheckBmpMemoryActivity;
+import com.example.administrator.myapplication.bitmap.CheckGifMemoryActivity;
 import com.example.administrator.myapplication.fix_rx_subscriber.FixRxActivity;
 import com.example.administrator.myapplication.leak.LeakActivity;
 import com.example.administrator.myapplication.leak.LeakActivity2;
@@ -142,6 +144,22 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         FixRxActivity.start(MainActivity.this);
+                    }
+                });
+
+        findViewById(R.id.btn_test_gif_memory)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CheckGifMemoryActivity.start(MainActivity.this);
+                    }
+                });
+
+        findViewById(R.id.btn_test_bmp_memory)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        CheckBmpMemoryActivity.start(MainActivity.this);
                     }
                 });
     }
